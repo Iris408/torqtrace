@@ -18,6 +18,15 @@ export type VehicleModule = {
   status: "Healthy" | "Monitor" | "Needs Review";
 };
 
+export type DiagnosticEvent = {
+  id: number;
+  time: string;
+  title: string;
+  module: string;
+  severity: AlertSeverity;
+  eventType: "Detected" | "Updated" | "Resolved" | "Monitoring";
+};
+
 export const diagnosticAlerts: DiagnosticAlert[] = [
   {
     id: 1,
@@ -123,5 +132,48 @@ export const vehicleModules: VehicleModule[] = [
     name: "Charging System",
     health: 79,
     status: "Monitor",
+  },
+];
+
+export const recentDiagnosticEvents: DiagnosticEvent[] = [
+  {
+    id: 1,
+    time: "10:18",
+    title: "Thermal management efficiency notice added",
+    module: "Thermal Management",
+    severity: "Info",
+    eventType: "Monitoring",
+  },
+  {
+    id: 2,
+    time: "10:03",
+    title: "Connectivity signal restored",
+    module: "Connectivity",
+    severity: "Resolved",
+    eventType: "Resolved",
+  },
+  {
+    id: 3,
+    time: "09:44",
+    title: "Charging connector communication delay detected",
+    module: "Charging System",
+    severity: "Warning",
+    eventType: "Detected",
+  },
+  {
+    id: 4,
+    time: "09:28",
+    title: "Front camera calibration warning updated",
+    module: "ADAS Camera System",
+    severity: "Warning",
+    eventType: "Updated",
+  },
+  {
+    id: 5,
+    time: "09:12",
+    title: "Battery temperature variance detected",
+    module: "Battery System",
+    severity: "Critical",
+    eventType: "Detected",
   },
 ];

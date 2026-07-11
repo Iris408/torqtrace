@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import "./App.css";
 import {
   diagnosticAlerts,
+  recentDiagnosticEvents,
   vehicleModules,
   type AlertSeverity,
   type DiagnosticAlert,
@@ -36,6 +37,10 @@ function App() {
       (alert) => alert.severity === selectedSeverity
     );
   }, [selectedSeverity]);
+
+  const activeAlertCount = diagnosticAlerts.filter(
+    (alert) => alert.status !== "Resolved"
+  ).length;
 
   const criticalCount = diagnosticAlerts.filter(
     (alert) => alert.severity === "Critical"
@@ -77,7 +82,7 @@ function App() {
       <section className="stats-grid">
         <article className="stat-card">
           <span>Active alerts</span>
-          <strong>{diagnosticAlerts.length}</strong>
+          <strong>{activeAlertCount}</strong>
         </article>
 
         <article className="stat-card critical-border">
@@ -138,6 +143,7 @@ function App() {
                   >
                     {alert.severity}
                   </span>
+
                   <h3>{alert.title}</h3>
                   <p>{alert.module}</p>
                 </div>
@@ -193,6 +199,42 @@ function App() {
             <p>{selectedAlert.suggestedAction}</p>
           </section>
         </article>
+      </section>
+
+      <section className="panel events-section">
+        <div className="panel-heading">
+          <div>
+            <h2>Recent Diagnostic Events</h2>
+            <p>
+              Timeline of recent alert changes, recoveries, and monitoring
+              updates.
+            </p>
+          </div>
+        </div>
+
+        <div className="event-list">
+          {recentDiagnosticEvents.map((event) => (
+            <article className="event-card" key={event.id}>
+              <div className="event-time-block">
+                <strong>{event.time}</strong>
+                <span>{event.eventType}</span>
+              </div>
+
+              <div>
+                <span
+                  className={`severity-pill ${getSeverityClass(
+                    event.severity
+                  )}`}
+                >
+                  {event.severity}
+                </span>
+
+                <h3>{event.title}</h3>
+                <p>{event.module}</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="panel module-section">
