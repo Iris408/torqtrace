@@ -17,7 +17,8 @@ Current stage: Portfolio-ready frontend MVP
 * ✅ Vehicle module health cards
 * ✅ Module progress bars
 * ✅ Responsive dashboard layout
-* ✅ Portfolio screenshot ready
+* ✅ Recent diagnostic events timeline
+* ✅ Active alert count excluding resolved alerts
 
 
 ## Features
