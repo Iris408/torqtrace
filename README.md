@@ -1,86 +1,176 @@
-# Vehicle Diagnostic UI Demo
+# TorqTrace
 
-Vehicle Diagnostic UI Demo is a frontend vehicle diagnostic dashboard built with React, TypeScript, Vite, and CSS.
+TorqTrace is a WordPress frontend dashboard concept for an automotive diagnostic interface.
 
-The app simulates a technician-facing vehicle health monitoring dashboard using mock diagnostic data. It includes alert triage, severity filtering, selected alert details, vehicle module health status, recent diagnostic events, and responsive dashboard layouts.
+It presents a technician-focused vehicle health dashboard with diagnostic metrics, vehicle status previews, recent fault codes, inspection priorities, and maintenance signals. The project was rebuilt as a polished WordPress theme concept to demonstrate responsive dashboard UI design, frontend structure, and visual product thinking.
 
-## Current Status
+## Current Version
+
+**v1.0.0 — WordPress Dashboard Concept**
+
+## Project Status
 
 | Area | Status |
 | --- | --- |
-| React / TypeScript frontend | ✅ Complete |
-| Vite setup | ✅ Complete |
-| Mock diagnostic data | ✅ Complete |
-| Diagnostic alert cards | ✅ Complete |
-| Severity filters | ✅ Complete |
-| Selected alert detail panel | ✅ Complete |
-| Vehicle module health cards | ✅ Complete |
-| Module progress bars | ✅ Complete |
-| Recent diagnostic events timeline | ✅ Complete |
-| Active alert count excluding resolved alerts | ✅ Complete |
-| Responsive layout | ✅ Complete |
+| WordPress theme structure | Complete |
+| Custom front-page dashboard | Complete |
+| Responsive desktop/tablet/mobile layout | Complete |
+| Diagnostic metrics section | Complete |
+| Vehicle health preview | Complete |
+| Fault code table | Complete |
+| Inspection queue | Complete |
+| Maintenance signals | Complete |
+| Screenshot-ready visual polish | Complete |
 
 ## Features
 
+- Custom WordPress theme
+- Static dashboard-style front page
+- Automotive diagnostic UI concept
 - Vehicle health overview
-- Demo vehicle ID and overall health score
-- Diagnostic alert list
-- Severity filters: All, Critical, Warning, Info, Resolved
-- Selected alert detail panel
-- Suggested technician action
-- Vehicle module status cards
-- Module progress bars
-- Recent diagnostic events timeline
-- Active alert count excluding resolved alerts
-- Responsive mobile-friendly layout
-
-## Screenshot
-
-<img src="./public/screenshots/vehicle-diagnostic-dashboard.png" width="700"/>
+- Fleet diagnostic metrics
+- Recent fault code table
+- Inspection queue cards
+- Maintenance signal cards
+- Responsive mobile/tablet/desktop layout
+- Dark technical interface styling
 
 ## Tech Stack
 
 | Area | Technologies |
 | --- | --- |
-| Frontend | React, TypeScript, Vite, CSS |
-| Data | Mock vehicle diagnostic data |
-| UI | Responsive dashboard layout, alert cards, severity pills, progress bars |
-| Tools | Git, GitHub, VS Code, local Vite dev server |
+| CMS / Theme | WordPress, PHP |
+| Frontend | HTML, CSS |
+| UI | Responsive dashboard layout, cards, tables, status badges |
+| Tools | LocalWP, Git, GitHub, VS Code |
 
-## Quick Start
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Run locally:
-
-```bash
-npm run dev
-```
-
-Open:
+## Project Structure
 
 ```text
-http://localhost:5174
+torqtrace/
+  README.md
+  LICENSE
+  docs/
+  archive/
+    vite-version/
+      src/
+      public/
+      package.json
+      vite.config.ts
+      tsconfig.json
+      tsconfig.app.json
+      tsconfig.node.json
+      eslint.config.js
+      index.html
+  wordpress/
+    torqtrace-theme/
+      footer.php
+      front-page.php
+      functions.php
+      header.php
+      index.php
+      style.css
+      theme.json
 ```
 
-## Documentation
+## WordPress Theme Files
 
-More detailed project documentation is available in the `docs/` folder.
-
-| Document | Description |
+| File | Purpose |
 | --- | --- |
-| [Setup Guide](./docs/setup.md) | Local setup and run commands |
-| [Project Details](./docs/project-details.md) | Architecture, feature notes, limitations, and future improvements |
-| [Learning Notes](./docs/learning-notes.md) | What this project demonstrates and what was learned |
+| `style.css` | Theme metadata and full responsive dashboard styling |
+| `functions.php` | Theme setup, title support, HTML5 support, menu registration, and stylesheet enqueueing |
+| `header.php` | Site header, logo, navigation, and system status indicator |
+| `footer.php` | Site footer and WordPress footer hook |
+| `index.php` | Fallback WordPress template |
+| `front-page.php` | Main TorqTrace dashboard concept |
+| `theme.json` | WordPress theme configuration |
 
-## Project Summary
+## Local WordPress Setup
 
-Vehicle Diagnostic UI Demo is a React and TypeScript dashboard that simulates vehicle health monitoring, diagnostic alert triage, module status tracking, severity filtering, recent diagnostic event history, and technician-focused alert details using mock vehicle data.
+This theme was tested locally using LocalWP.
+
+To preview the theme:
+
+1. Create a local WordPress site in LocalWP.
+2. Copy or symlink `wordpress/torqtrace-theme` into the local WordPress themes directory:
+
+```text
+wp-content/themes/
+```
+
+3. Activate **TorqTrace** in WordPress:
+
+```text
+Appearance → Themes → TorqTrace → Activate
+```
+
+4. Visit the local homepage.
+
+The theme uses `front-page.php` as the main dashboard layout.
+
+## Suggested Symlink Setup
+
+If the repository is stored locally and you want changes in the repo to update immediately in LocalWP, you can symlink the theme folder.
+
+Example:
+
+```bash
+ln -s ~/Developer/torqtrace/wordpress/torqtrace-theme \
+  ~/Local\ Sites/torqtrace/app/public/wp-content/themes/torqtrace-theme
+```
+
+Adjust the paths if your local folders are different.
+
+## Screenshots
+
+<table>
+  <tr>
+    <td>
+      <img src="docs/screenshots/torqtrace-desktop-hero.png" width="400"/>
+      <br/>
+      <strong>Desktop Dashboard Hero</strong>
+    </td>
+    <td>
+      <img src="docs/screenshots/torqtrace-tablet.png" width="400"/>
+      <br/>
+      <strong>Tablet Dashboard Hero</strong>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="docs/screenshots/torqtrace-mobile-hero.png" width="400"/>
+      <br/>
+      <strong>Mobile Dashboard Heros</strong>
+    </td>
+    <td>
+      <img src="docs/screenshots/torqtrace-mobile-dashboard.png" width="400"/>
+      <br/>
+      <strong>Mobile Dashboard</strong>
+    </td>
+  </tr>
+</table>
+
+## Previous Version
+
+The original React / TypeScript / Vite version has been archived in:
+
+```text
+archive/vite-version/
+```
+
+That version remains available for reference, but the active v1.0.0 release is the WordPress dashboard concept.
+
+## Release Notes
+
+### v1.0.0
+
+- Rebuilt TorqTrace as a WordPress frontend dashboard concept
+- Added a custom WordPress theme structure
+- Added a dashboard-style `front-page.php`
+- Added responsive desktop, tablet, and mobile styling
+- Added diagnostic metrics, vehicle health preview, fault-code table, inspection queue, and maintenance cards
+- Archived the previous React / TypeScript / Vite version
 
 ## Author
 
-Built by Iris408
+Built by Iris408.
