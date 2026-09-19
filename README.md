@@ -131,19 +131,19 @@ Adjust the paths if your local folders are different.
       <strong>Desktop Dashboard Hero</strong>
     </td>
     <td>
-      <img src="docs/screenshots/torqtrace-tablet.png" width="400"/>
+      <img src="docs/screenshots/torqtrace-tablet.png" width="300"/>
       <br/>
       <strong>Tablet Dashboard Hero</strong>
     </td>
   </tr>
   <tr>
     <td>
-      <img src="docs/screenshots/torqtrace-mobile-hero.png" width="400"/>
+      <img src="docs/screenshots/torqtrace-mobile-hero.png" width="200"/>
       <br/>
-      <strong>Mobile Dashboard Heros</strong>
+      <strong>Mobile Dashboard Hero</strong>
     </td>
     <td>
-      <img src="docs/screenshots/torqtrace-mobile-dashboard.png" width="400"/>
+      <img src="docs/screenshots/torqtrace-mobile-dashboard.png" width="200"/>
       <br/>
       <strong>Mobile Dashboard</strong>
     </td>
